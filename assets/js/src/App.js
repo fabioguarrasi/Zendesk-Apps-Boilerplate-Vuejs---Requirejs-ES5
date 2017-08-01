@@ -1,9 +1,11 @@
 define([
-  'text!./App.html',
-  './components/Welcome/index'
+  'text!./templates/App.html',
+  './components/Welcome',
+  'Vue'
 ], function(
   _template,
-  Welcome
+  Welcome,
+  Vue
 ) {
   'use strict';
 
