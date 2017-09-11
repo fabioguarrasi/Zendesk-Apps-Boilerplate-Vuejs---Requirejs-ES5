@@ -4,7 +4,7 @@ define([
   'vue'
 ], function(
   template,
-  client,
+  zaf,
   Vue
 ) {
   'use strict';
@@ -14,11 +14,15 @@ define([
     props: ['list'],
     data: function() {
       return {
+        testing: '',
         message: 'This is a first app built using Vuejs and Requirejs'
       };
     },
-    beforeMount: function() {
-      client.zd.invoke('resize', {width: '100%', height: '250px'});
+    methods: {
+      addItem: function() {
+        this.list.push(this.testing);
+        this.testing = '';
+      }
     }
   });
 });

@@ -1,9 +1,9 @@
 define(function() {
   return {
-    zd: null,
+    client: null,
 
     init: function() {
-      this.zd = ZAFClient.init();
+      this.client = ZAFClient.init();
     }
   };
 })

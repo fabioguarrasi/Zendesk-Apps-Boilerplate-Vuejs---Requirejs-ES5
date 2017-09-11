@@ -18,16 +18,16 @@ require([
   'vue'
 ], function(
   App,
-  client,
+  zaf,
   Vue
 ) {
   'use strict';
 
-  client.init();
-  client.zd.on('app.registered', init);
+  zaf.init();
+  zaf.client.on('app.registered', init);
 
   function init() {
-    client.zd.invoke('resize', {width: '100%', height: '200px'});
+    zaf.client.invoke('resize', {width: '100%', height: '200px'});
     new Vue({
       el: '#app',
       render: function(h) {
@@ -38,4 +38,4 @@ require([
       }
     });
   }
-})
+});
