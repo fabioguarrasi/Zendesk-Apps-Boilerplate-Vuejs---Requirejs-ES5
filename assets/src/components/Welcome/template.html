@@ -1,5 +1,7 @@
 <div id="welcome">
   <p>{{message}}</p>
+  <input type="text" v-model="testing">
+  <button @click="addItem">Add item</button>
   <ul>
     <li v-for="item in list">list item #{{item}}</li>
   </ul>

@@ -1,10 +1,12 @@
 define([
   'text!./template.html',
   '../Welcome/Welcome',
+  '../../libs/utilities',
   'vue'
 ], function(
   template,
   Welcome,
+  utilities,
   Vue
 ) {
   'use strict';
@@ -18,6 +20,9 @@ define([
     },
     components: {
       zdWelcome: Welcome
+    },
+    updated: function() {
+      utilities.autoFrameResize(this.$el);
     }
   });
 });
