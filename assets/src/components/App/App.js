@@ -1,16 +1,16 @@
 define([
-  'text!./templates/App.html',
-  './components/Welcome',
-  'Vue'
+  'text!./template.html',
+  '../Welcome/Welcome',
+  'vue'
 ], function(
-  _template,
+  template,
   Welcome,
   Vue
 ) {
   'use strict';
 
   return Vue.component('zd-app', {
-    template: _template,
+    template: template,
     data: function() {
       return {
         list: [1,2,3,4,5,6,7,8]

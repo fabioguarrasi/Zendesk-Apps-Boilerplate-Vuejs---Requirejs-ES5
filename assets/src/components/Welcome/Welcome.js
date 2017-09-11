@@ -1,16 +1,16 @@
 define([
-  'text!../templates/Welcome.html',
+  'text!./template.html',
   '../../libs/ZAFClient',
-  'Vue'
+  'vue'
 ], function(
-  _template,
+  template,
   client,
   Vue
 ) {
   'use strict';
 
   return Vue.component('test-component', {
-    template: _template,
+    template: template,
     props: ['list'],
     data: function() {
       return {
