@@ -1,14 +1,19 @@
 <html>
-  <head>
-    <meta charset="utf-8">
-    <!-- http://garden.zendesk.com -->
-    <link rel="stylesheet" href="https://assets.zendesk.com/apps/sdk-assets/css/0/zendesk_garden.css" type="text/css">
-    <link rel="stylesheet" href="style/main.css" type="text/css">
-  </head>
-  <body>
-    <div id="app"></div>
-    <!-- https://github.com/zendesk/zendesk_app_framework_sdk -->
-    <script type="text/javascript" src="https://assets.zendesk.com/apps/sdk/2.0/zaf_sdk.js"></script>
-    <script data-main="src/main.js" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.5/require.min.js"></script>
-  </body>
+<head>
+  <meta charset="utf-8">
+  <!-- http://garden.zendesk.com -->
+  <link rel="stylesheet" href="https://assets.zendesk.com/apps/sdk-assets/css/2/zendesk_garden.css" type="text/css">
+</head>
+<body>
+  <div id="app"></div>
+  <!-- https://github.com/zendesk/zendesk_app_framework_sdk -->
+  <script type="text/javascript" src="https://assets.zendesk.com/apps/sdk/2.0/zaf_sdk.js"></script>
+  <script src="https://cdn.jsdelivr.net/combine/npm/es6-promise@4.1.1,npm/underscore@1.8.3"></script>
+  <script
+    data-main="src/main.js"
+    data-require="require.js@*"
+    data-semver="2.3.5"
+    src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.5/require.min.js">
+  </script>
+</body>
 </html>

@@ -1,4 +1,6 @@
 define(function() {
+  'use strict';
+
   return {
     client: null,
 
@@ -6,4 +8,4 @@ define(function() {
       this.client = ZAFClient.init();
     }
   };
-})
+});

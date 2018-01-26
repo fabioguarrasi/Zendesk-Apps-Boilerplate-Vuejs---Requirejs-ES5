@@ -1,40 +1,42 @@
 require.config({
   paths: {
-    '_': 'https://cdn.jsdelivr.net/npm/lodash@4.17.4/lodash.min',
     'ES6Promise': 'https://cdnjs.cloudflare.com/ajax/libs/es6-promise/4.1.1/es6-promise.auto.min',
+    'text': 'https://cdnjs.cloudflare.com/ajax/libs/require-text/2.0.12/text.min',
     'vue': 'https://cdnjs.cloudflare.com/ajax/libs/vue/2.2.1/vue.min',
-    'text': 'https://cdnjs.cloudflare.com/ajax/libs/require-text/2.0.12/text.min'
+    'vuex': 'https://cdnjs.cloudflare.com/ajax/libs/vuex/2.4.0/vuex.min'
   },
   shim: {
-    _: { exports: '_' },
     ES6Promise: { exports: 'ES6Promise' },
-    vue: { exports: 'vue' }
-  }
+    vue: { exports: 'Vue' },
+    vuex: { exports: 'Vuex' }
+  },
+  baseUrl: 'src'
 });
 
 require([
-  './components/App/App',
-  './libs/ZAFClient',
-  'vue'
+  'components/App/App',
+  'store/store',
+  'vue',
+  'libs/ZAFClient'
 ], function(
   App,
-  zaf,
-  Vue
+  store,
+  Vue,
+  zaf
 ) {
   'use strict';
+
+  var VUE_INSTANCE = null;
 
   zaf.init();
   zaf.client.on('app.registered', init);
 
-  function init() {
-    zaf.client.invoke('resize', {width: '100%', height: '200px'});
-    new Vue({
+  function init(data) {
+    VUE_INSTANCE = new Vue({
       el: '#app',
+      store: store,
       render: function(h) {
         return h(App);
-      },
-      created: function() {
-        console.log('app created');
       }
     });
   }
