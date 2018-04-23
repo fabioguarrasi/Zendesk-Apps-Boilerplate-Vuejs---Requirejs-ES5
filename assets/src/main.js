@@ -28,13 +28,13 @@ require([
 ) {
   'use strict';
 
-  var VUE_INSTANCE = null;
+  var vm = null;
 
   zaf.init();
   zaf.client.on('app.registered', init);
 
   function init(data) {
-    VUE_INSTANCE = new Vue({
+    vm = new Vue({
       el: '#app',
       store: store,
       render: function(h) {
