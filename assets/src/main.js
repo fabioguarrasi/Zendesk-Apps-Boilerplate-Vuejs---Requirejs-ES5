@@ -17,7 +17,7 @@ require.config({
 });
 
 require([
-  'components/App/App',
+  'components/App/app',
   'store/store',
   'vue',
   'libs/ZAFClient'
