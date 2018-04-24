@@ -1,6 +1,6 @@
 define([
-  'vue',
-  'vuex'
+  'Vue',
+  'Vuex'
 ], function(
   Vue,
   Vuex

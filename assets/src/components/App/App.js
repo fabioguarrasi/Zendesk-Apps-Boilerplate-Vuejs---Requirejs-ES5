@@ -1,6 +1,6 @@
 define([
   'text!./template.html',
-  'vue',
+  'Vue',
   'libs/ZAFClient'
 ],function(
   template,
