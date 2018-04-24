@@ -10,6 +10,12 @@ define([
   'use strict';
 
   return Vue.component('zd-app', {
-    template: template
+    template: template,
+    mounted: function() {
+      zaf.resizeFrame(this.$el.scrollHeight);
+    },
+    updated: function() {
+      zaf.resizeFrame(this.$el.scrollHeight);
+    }
   });
 });
