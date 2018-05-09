@@ -18,8 +18,7 @@ define([
      * @param {Int} newHeight
      */
     resizeFrame: function(appHeight) {
-      var newHeight = !!appHeight ? appHeight : 80;
-      this.client.invoke('resize', {width: '700px', height: newHeight +'px'});
+      this.client.invoke('resize', {width: '100%', height: appHeight +'px'});
     }
   };
 });
