@@ -1,9 +1,9 @@
 {
-  "name": "Require Vue App",
+  "name": "Zendesk Vuejs app",
   "author": {
-    "name": "Fabio Guarrasi",
-    "email": "fguarrasi@zendesk.com",
-    "url": ""
+    "name": "Zendesk Professional Services",
+    "email": "services@zendesk.com",
+    "url": "https://support.zendesk.com"
   },
   "defaultLocale": "en",
   "private": true,
