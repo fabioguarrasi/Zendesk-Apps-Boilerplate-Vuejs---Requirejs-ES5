@@ -1,10 +1,8 @@
 require.config({
   paths: {
     'text': 'https://cdnjs.cloudflare.com/ajax/libs/require-text/2.0.12/text.min',
-    'json': 'https://cdnjs.cloudflare.com/ajax/libs/requirejs-plugins/1.0.3/json.min',
-    'Vue': 'https://cdnjs.cloudflare.com/ajax/libs/vue/2.2.1/vue.min',
-    'Vuex': 'https://cdnjs.cloudflare.com/ajax/libs/vuex/2.4.0/vuex.min',
-    'ES6Promise': 'https://cdnjs.cloudflare.com/ajax/libs/es6-promise/4.1.1/es6-promise.auto.min',
+    'Vue': 'https://cdn.jsdelivr.net/npm/vuejs@3.0.1/index.min',
+    'Vuex': 'https://cdn.jsdelivr.net/npm/vuex@3.0.1/dist/vuex.common.min',
     'underscore': 'https://cdnjs.cloudflare.com/ajax/libs/underscore.js/1.8.3/underscore-min',
     'ZAFClient': 'https://assets.zendesk.com/apps/sdk/2.0/zaf_sdk'
   },
@@ -20,7 +18,6 @@ require([
   'Vue',
   'libs/ZAFClient',
   'underscore',
-  'ES6Promise'
 ], function(
   App,
   store,
@@ -32,7 +29,6 @@ require([
   'use strict';
 
   window._ = underscore;
-  window.ES6Promise = ES6Promise;
 
   var vm = null;
 
