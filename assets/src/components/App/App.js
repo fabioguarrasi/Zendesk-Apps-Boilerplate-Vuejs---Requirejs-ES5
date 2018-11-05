@@ -11,6 +11,11 @@ define([
 
   return Vue.component('zd-app', {
     template: template,
+    computed: {
+      helloWorld: function() {
+        return this.$store.state['helloWorld'];
+      }
+    },
     mounted: function() {
       zaf.resizeFrame(this.$el.scrollHeight);
     },

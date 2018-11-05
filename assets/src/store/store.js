@@ -10,6 +10,8 @@ define([
   Vue.use(Vuex);
 
   return new Vuex.Store({
-    state: {}
+    state: {
+      helloWorld: 'Hello World!'
+    }
   });
 })
