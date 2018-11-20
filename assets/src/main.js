@@ -1,8 +1,8 @@
 require.config({
   paths: {
     'text': 'https://cdnjs.cloudflare.com/ajax/libs/require-text/2.0.12/text.min',
-    'Vue': 'https://cdn.jsdelivr.net/npm/vuejs@3.0.1/index.min',
-    'Vuex': 'https://cdn.jsdelivr.net/npm/vuex@3.0.1/dist/vuex.common.min',
+    'Vue': 'https://cdn.jsdelivr.net/npm/vue@2.5.17/dist/vue.min',
+    'Vuex': 'https://cdn.jsdelivr.net/npm/vuex@3.0.1/dist/vuex.min',
     'underscore': 'https://cdnjs.cloudflare.com/ajax/libs/underscore.js/1.8.3/underscore-min',
     'ZAFClient': 'https://assets.zendesk.com/apps/sdk/2.0/zaf_sdk'
   },
@@ -23,8 +23,7 @@ require([
   store,
   Vue,
   zaf,
-  underscore,
-  ES6Promise
+  underscore
 ) {
   'use strict';
 
