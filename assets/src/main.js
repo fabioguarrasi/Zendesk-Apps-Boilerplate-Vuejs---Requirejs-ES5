@@ -1,10 +1,12 @@
 require.config({
   paths: {
-    'text': 'https://cdnjs.cloudflare.com/ajax/libs/require-text/2.0.12/text.min',
+    'text': 'plugins/requireText.min',
+    'json': 'plugins/requireJson.min',
     'Vue': 'https://cdn.jsdelivr.net/npm/vue@2.5.17/dist/vue.min',
     'Vuex': 'https://cdn.jsdelivr.net/npm/vuex@3.0.1/dist/vuex.min',
     'underscore': 'https://cdnjs.cloudflare.com/ajax/libs/underscore.js/1.8.3/underscore-min',
-    'ZAFClient': 'https://assets.zendesk.com/apps/sdk/2.0/zaf_sdk'
+    'ZAFClient': 'https://assets.zendesk.com/apps/sdk/2.0/zaf_sdk',
+    'ES6Promise': 'https://cdn.jsdelivr.net/npm/es6-promise@4.2.8/dist/es6-promise.auto.min',
   },
   shim: {
     'ZAFClient': {exports: 'ZAFClient'}
@@ -13,34 +15,38 @@ require.config({
 });
 
 require([
-  'components/App/app',
+  'components/App/App',
+  'ES6Promise',
   'store/store',
   'Vue',
-  'libs/ZAFClient',
+  'libs/ZDClient',
   'underscore',
+  'i18n/index',
 ], function(
   App,
+  ES6Promise,
   store,
   Vue,
-  zaf,
-  underscore
+  zdClient,
+  underscore,
+  i18n,
 ) {
   'use strict';
 
+  zdClient.init();
+  zdClient.events['APP_REGISTERED'](initVueApp);
+
+  Vue.use(i18n);
   window._ = underscore;
+  window.ES6Promise = ES6Promise;
 
-  var vm = null;
-
-  zaf.init();
-  zaf.client.on('app.registered', init);
-
-  function init(data) {
-    vm = new Vue({
+  function initVueApp() {
+    new Vue({
       el: '#app',
       store: store,
       render: function(h) {
         return h(App);
-      }
+      },
     });
   }
 });

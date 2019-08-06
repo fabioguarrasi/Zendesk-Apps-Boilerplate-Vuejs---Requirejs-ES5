@@ -1,26 +1,21 @@
 define([
   'text!./template.html',
-  'Vue',
-  'libs/ZAFClient'
+  'libs/ZDClient'
 ],function(
   template,
-  Vue,
-  zaf
+  zdClient,
 ) {
   'use strict';
 
-  return Vue.component('zd-app', {
+  return {
     template: template,
     computed: {
       helloWorld: function() {
         return this.$store.state['helloWorld'];
-      }
+      },
     },
     mounted: function() {
-      zaf.resizeFrame(this.$el.scrollHeight);
+      zdClient.resizeFrame(this.$el.scrollHeight);
     },
-    updated: function() {
-      zaf.resizeFrame(this.$el.scrollHeight);
-    }
-  });
+  };
 });
