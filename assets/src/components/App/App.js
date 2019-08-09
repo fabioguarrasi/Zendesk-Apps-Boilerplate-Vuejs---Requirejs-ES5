@@ -1,7 +1,7 @@
 define([
   'text!./template.html',
   'libs/ZDClient'
-],function(
+], function(
   template,
   zdClient,
 ) {

@@ -7,11 +7,11 @@ define([
 
   return {
     install(Vue, options) {
-      var t =
+      const t =
         options && options.locale
           ? dictionary[options.locale] || dictionary['en']
           : dictionary['en'];
-      var RTL_LOCALES = ['ar', 'he'];
+      const RTL_LOCALES = ['ar', 'he'];
       Vue.prototype.$t = key => {
         return t[key] || '';
       };

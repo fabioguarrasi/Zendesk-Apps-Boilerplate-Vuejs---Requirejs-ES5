@@ -6,7 +6,7 @@ require.config({
     'Vuex': 'https://cdn.jsdelivr.net/npm/vuex@3.0.1/dist/vuex.min',
     'underscore': 'https://cdnjs.cloudflare.com/ajax/libs/underscore.js/1.8.3/underscore-min',
     'ZAFClient': 'https://assets.zendesk.com/apps/sdk/2.0/zaf_sdk',
-    'ES6Promise': 'https://cdn.jsdelivr.net/npm/es6-promise@4.2.8/dist/es6-promise.auto.min',
+    'ES6Promise': 'https://cdn.jsdelivr.net/npm/es6-promise@4.2.8/dist/es6-promise.auto.min'
   },
   shim: {
     'ZAFClient': {exports: 'ZAFClient'}

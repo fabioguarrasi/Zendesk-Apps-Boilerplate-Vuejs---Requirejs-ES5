@@ -10,13 +10,13 @@ define([
 
   return {
 
-    init() {
+    init: function() {
       CLIENT = ZAFClient.init();
     },
 
     events: {
-      APP_REGISTERED(callback) {
-        return CLIENT.on('app.registered', (data) => {
+      APP_REGISTERED: function(callback) {
+        return CLIENT.on('app.registered', function(data) {
           APP_SETTINGS = data.metadata.settings;
           return callback(data);
         });
@@ -34,7 +34,7 @@ define([
      * It returns true if the app is installed in the instance, false if
      * it's running locally
      */
-    isProduction() {
+    isProduction: function() {
       return !!APP_SETTINGS['IS_PRODUCTION'];
     },
 
@@ -43,7 +43,7 @@ define([
      * If no value has been passed, 80 will be set as default heigth.
      * @param {Int} newHeight
      */
-    resizeFrame(appHeight) {
+    resizeFrame: function(appHeight) {
       CLIENT.invoke('resize', {width: '100%', height: appHeight +'px'});
     },
   };

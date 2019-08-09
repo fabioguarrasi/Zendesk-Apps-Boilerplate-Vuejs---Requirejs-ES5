@@ -1,11 +1,11 @@
 define([
   'Vue',
   'Vuex',
-  'i18n/index',
+  'i18n/index'
 ], function(
   Vue,
   Vuex,
-  i18n,
+  i18n
 ) {
   'use strict';
 
