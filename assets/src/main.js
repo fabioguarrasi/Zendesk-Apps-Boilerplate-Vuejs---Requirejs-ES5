@@ -40,6 +40,7 @@ require([
   window.ES6Promise = ES6Promise;
 
   function initVueApp(data) {
+    console.log(zdClient.app.currentUser);
     Vue.use(i18n);
     new Vue({
       el: '#app',

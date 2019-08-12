@@ -1,5 +1,9 @@
 {
   "en": {
-    "helloWorld": "Hello World!"
+    "helloWorld": "Hello World!",
+    "helloWorldFromChild": "Hello from Child"
+  },
+  "it": {
+    "helloWorld": "Ciao Mondo"
   }
 }

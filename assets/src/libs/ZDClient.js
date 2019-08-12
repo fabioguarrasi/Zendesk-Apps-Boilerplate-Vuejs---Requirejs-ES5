@@ -7,6 +7,7 @@ define([
 
   var CLIENT = null;
   var APP_SETTINGS = null;
+  var CURRENT_USER = null;
 
   return {
 
@@ -18,8 +19,11 @@ define([
       APP_REGISTERED: function(callback) {
         return CLIENT.on('app.registered', function(data) {
           APP_SETTINGS = data.metadata.settings;
-          return callback(data);
-        });
+          return CLIENT.get('currentUser').then(function(response) {
+            CURRENT_USER = response.currentUser;
+            return callback(data);
+          });
+        })
       }
     },
 
@@ -27,7 +31,10 @@ define([
      * Set getters for privite objects
      */
     app: {
-      get settings() { return APP_SETTINGS; }
+      get settings() { return APP_SETTINGS; },
+      get currentUser() {
+        return CURRENT_USER;
+      }
     },
 
     /**
