@@ -12,7 +12,7 @@ define([
           ? dictionary[options.locale] || dictionary['en']
           : dictionary['en'];
       const RTL_LOCALES = ['ar', 'he'];
-      Vue.prototype.$t = key => {
+      Vue.prototype.$t = function(key) {
         return t[key] || '';
       };
       Vue.prototype.$rtl = function() {

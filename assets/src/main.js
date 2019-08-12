@@ -36,11 +36,11 @@ require([
   zdClient.init();
   zdClient.events['APP_REGISTERED'](initVueApp);
 
-  Vue.use(i18n);
   window._ = underscore;
   window.ES6Promise = ES6Promise;
 
-  function initVueApp() {
+  function initVueApp(data) {
+    Vue.use(i18n);
     new Vue({
       el: '#app',
       store: store,
